@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App_Venta.MainPage">
+
+    <StackLayout BackgroundColor="#996633" Padding="10">
+        <Frame BackgroundColor="black" Padding="10" CornerRadius="0" BorderColor="#000000">
+            <Label Text="Venta de Dulces" HorizontalTextAlignment="Center" TextColor="#f2e6d9" FontSize="30"/>
+        </Frame>
+        <Label Text="Selecciona un dulce" HorizontalOptions="CenterAndExpand"/>
+        <Picker x:Name="pickerPRoduct" BackgroundColor="Beige" TextColor="Black" Title="Selecciona un producto" TitleColor="Brown"/>
+        <Entry x:Name="cantidadEntry" Keyboard="Numeric" Placeholder="Cantidad" PlaceholderColor="Black" TextColor="Black" BackgroundColor="#f8f2ec"/>
+
+        <!-- Botones -->
+        <StackLayout Orientation="Horizontal">
+            <Button x:Name="agregarButton" Text="Agregar al carrito" Clicked="AgregarButton_Clicked" BackgroundColor="#ebd9c6"/>
+            <Button x:Name="borrarButton" Text="Borrar" Clicked="BorrarButton_Clicked" BackgroundColor="#ebd9c6"/>
+        </StackLayout>
+
+        <!-- Título de Lista de Compras -->
+        <Frame BackgroundColor="#ebd9c6" Padding="8" CornerRadius="0" BorderColor="#000000">
+            <Label Text="Lista de compras" HorizontalTextAlignment="Center" TextColor="Black" FontSize="20"/>
+        </Frame>
+
+        <!-- Tabla de Compras (Posiblemente deberías usar ListView para esto) -->
+        <Grid x:Name="carritoGrid">
+            <!-- La estructura de la tabla se mantiene igual -->
+        </Grid>
+
+        <!-- Botón para Calcular Total -->
+        <Button x:Name="calcularTotalButton" Text="Calcular total" Clicked="CalcularTotalButton_Clicked" BackgroundColor="#392714" HorizontalOptions="Center" TextColor="#aa753c"/>
+
+        <!-- Etiqueta para mostrar el Total de Compra -->
+        <Label x:Name="totalCompraLabel" Text="Total: $0.00" HorizontalOptions="CenterAndExpand" FontSize="Large" TextColor="Black"/>
+    </StackLayout>
+
+</ContentPage>
